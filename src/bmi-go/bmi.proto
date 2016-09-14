@@ -1,0 +1,19 @@
+// Build this file with this command:
+//protoc --go_out=plugins=micro:./pb bmi.proto
+
+syntax = "proto3";
+
+service BmiCalculator {
+	rpc Calculate(BmiRequest) returns (BmiResponse) {}
+}
+
+message BmiRequest {
+    string name = 1;
+    float height = 2;
+    float weight = 3;
+
+}
+
+message BmiResponse {
+    float bmi = 1;
+}
