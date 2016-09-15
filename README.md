@@ -31,6 +31,20 @@ Step 6: open a new command window, to location of your .proto file
 $ $PROTOC --go_out=plugins=micro:./pb namer.proto
 
 Above command will compile your .proto file and generate a .go file in ‘pb’ directory.
+----
+To enable Microservice discovery 
+
+consul agent -dev -advertise 127.0.0.1
+---
+To build and run micro service
+$ go build bmi.go
+$ go run bmi.go
+---
+To build and run micro service client
+$ go build bmi-client.go
+$ go run bmi-client.go
+
+
 
 
 
